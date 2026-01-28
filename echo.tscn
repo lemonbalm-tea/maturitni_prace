@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://1hodgp0gimlh"]
+
+[ext_resource type="Shader" uid="uid://ctxe7gt45eyk" path="res://UV_to_color.gdshader" id="2_0twx3"]
+[ext_resource type="Texture2D" uid="uid://cuvllaj1ybfrr" path="res://icon.svg" id="2_1ob1v"]
+[ext_resource type="Shader" uid="uid://dp4705objw54l" path="res://greyscale.gdshader" id="3_0bblu"]
+[ext_resource type="Shader" uid="uid://dj4ufg1xhvtj8" path="res://move.gdshader" id="4_ax3dc"]
+[ext_resource type="Shader" uid="uid://btlkv5ef8vu77" path="res://sway.gdshader" id="5_bdc8x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bqtsb"]
+shader = ExtResource("2_0twx3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tbe5n"]
+shader = ExtResource("3_0bblu")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jxvts"]
+shader = ExtResource("4_ax3dc")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_leh1t"]
+shader = ExtResource("5_bdc8x")
+
+[node name="echo" type="Node2D" unique_id=1397220130]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=531683936]
+material = SubResource("ShaderMaterial_bqtsb")
+position = Vector2(1062, 522)
+texture = ExtResource("2_1ob1v")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1034714880]
+material = SubResource("ShaderMaterial_tbe5n")
+position = Vector2(1292, 526)
+texture = ExtResource("2_1ob1v")
+
+[node name="move" type="Sprite2D" parent="." unique_id=518297239]
+material = SubResource("ShaderMaterial_jxvts")
+position = Vector2(1509, 526)
+texture = ExtResource("2_1ob1v")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=401262645]
+material = SubResource("ShaderMaterial_leh1t")
+position = Vector2(1720, 525)
+texture = ExtResource("2_1ob1v")

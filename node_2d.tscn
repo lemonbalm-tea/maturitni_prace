@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://drmro5mpv6gir"]
+
+[ext_resource type="PackedScene" uid="uid://b27y2wncbuqqx" path="res://stefan.tscn" id="1_0e48y"]
+[ext_resource type="Shader" uid="uid://b1eewwok04ce" path="res://pulse.gdshader" id="1_wtcfe"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0e48y"]
+shader = ExtResource("1_wtcfe")
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0e48y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
+size = Vector2(1824, 113)
+
+[node name="Node2D" type="Node2D" unique_id=1960837855]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=577011926]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=298368256]
+material = SubResource("ShaderMaterial_0e48y")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CanvasLayer" unique_id=1731526924]
+position = Vector2(607, 811)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/StaticBody2D" unique_id=2029161219]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(337.6875, 0)
+scale = Vector2(1826.6249, 114.5)
+texture = SubResource("PlaceholderTexture2D_0e48y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/StaticBody2D" unique_id=53524139]
+position = Vector2(338, -0.5)
+shape = SubResource("RectangleShape2D_epypp")
+
+[node name="CharacterBody2D" parent="CanvasLayer" unique_id=586974972 instance=ExtResource("1_0e48y")]
+visibility_layer = 3
+position = Vector2(812, 591)
