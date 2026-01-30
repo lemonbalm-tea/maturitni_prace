@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://btciguxuicc4m"]
+
+[ext_resource type="Script" uid="uid://bva4ih05ihtcm" path="res://borivoj.gd" id="1_sxtj7"]
+[ext_resource type="Texture2D" uid="uid://cuvllaj1ybfrr" path="res://icon.svg" id="2_j810l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfy2t"]
+size = Vector2(128, 129)
+
+[node name="borivoj" type="CharacterBody2D" unique_id=2006581798]
+script = ExtResource("1_sxtj7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1214356723]
+texture = ExtResource("2_j810l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1437170389]
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_jfy2t")

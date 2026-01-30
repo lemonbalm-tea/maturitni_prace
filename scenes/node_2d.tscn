@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://drmro5mpv6gir"]
 
-[ext_resource type="PackedScene" uid="uid://b27y2wncbuqqx" path="res://stefan.tscn" id="1_0e48y"]
-[ext_resource type="Shader" uid="uid://b1eewwok04ce" path="res://pulse.gdshader" id="1_wtcfe"]
+[ext_resource type="Shader" uid="uid://b1eewwok04ce" path="res://shader/pulse.gdshader" id="1_4dvvg"]
+[ext_resource type="PackedScene" uid="uid://b27y2wncbuqqx" path="res://scenes/stefan.tscn" id="2_rnjyy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0e48y"]
-shader = ExtResource("1_wtcfe")
+shader = ExtResource("1_4dvvg")
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0e48y"]
 
@@ -36,6 +36,6 @@ texture = SubResource("PlaceholderTexture2D_0e48y")
 position = Vector2(338, -0.5)
 shape = SubResource("RectangleShape2D_epypp")
 
-[node name="CharacterBody2D" parent="CanvasLayer" unique_id=586974972 instance=ExtResource("1_0e48y")]
+[node name="CharacterBody2D" parent="CanvasLayer" unique_id=586974972 instance=ExtResource("2_rnjyy")]
 visibility_layer = 3
 position = Vector2(812, 591)

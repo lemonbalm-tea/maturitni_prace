@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://chnj8k6benhxc"]
+
+[ext_resource type="Shader" uid="uid://dir7nr36dqcrg" path="res://shader/sonar.gdshader" id="1_f882t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_btk7l"]
+shader = ExtResource("1_f882t")
+shader_parameter/resolution = Vector2(1920, 1080)
+shader_parameter/color = Color(0.15514022, 0.40729058, 0.65368176, 1)
+shader_parameter/zoom = 2.0
+shader_parameter/speed = 0.0
+shader_parameter/contrast = 20.0
+shader_parameter/alpha_treshold = 0.0
+
+[node name="Node2D" type="Control" unique_id=1925891805]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=432945832]
+material = SubResource("ShaderMaterial_btk7l")
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
