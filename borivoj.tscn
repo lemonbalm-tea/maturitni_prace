@@ -13,5 +13,6 @@ script = ExtResource("1_sxtj7")
 texture = ExtResource("2_j810l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1437170389]
+y_sort_enabled = true
 position = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_jfy2t")
