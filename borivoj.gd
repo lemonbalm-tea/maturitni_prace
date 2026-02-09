@@ -9,8 +9,8 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	move_and_slide()
-	if Input.is_action_just_pressed("echo"):
-		instance_object()
+	#if Input.is_action_just_pressed("echo"):
+	#	instance_object()
 func instance_object():
 
 	var position = $".".global_position
