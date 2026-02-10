@@ -700,12 +700,18 @@ custom_data_layer_2/name = "is_door"
 custom_data_layer_2/type = 0
 sources/0 = SubResource("TileSetAtlasSource_hbghi")
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ihfcg"]
+light_mode = 1
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rka8t"]
 shader = ExtResource("1_ihfcg")
+shader_parameter/pulse_time = 0.0
+shader_parameter/echo_color = Color(0, 1, 1, 1)
 
 [node name="level1" type="Node2D" unique_id=1586051062 node_paths=PackedStringArray("Tile_Map")]
 script = ExtResource("1_rka8t")
 Tile_Map = NodePath("Map_1")
+Max_Range = 200.0
 
 [node name="Map_1" type="TileMapLayer" parent="." unique_id=234329103]
 unique_name_in_owner = true
@@ -715,6 +721,8 @@ tile_set = SubResource("TileSet_hn12h")
 
 [node name="Borivoj" parent="." unique_id=2006581798 instance=ExtResource("2_hbghi")]
 unique_name_in_owner = true
+top_level = true
+material = SubResource("CanvasItemMaterial_ihfcg")
 position = Vector2(179, 159.99995)
 scale = Vector2(0.085, 0.085)
 collision_layer = 3
@@ -726,6 +734,13 @@ position = Vector2(-1.9073486e-05, 4.9591064e-05)
 scale = Vector2(4.7619047, 4.7619047)
 zoom = Vector2(7.2, 7.2)
 
+[node name="BackBufferCopy" type="BackBufferCopy" parent="." unique_id=639885537]
+copy_mode = 2
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1106032680]
+color = Color(0, 0, 0, 1)
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1705066873]
 unique_name_in_owner = true
+z_index = 10
 material = SubResource("ShaderMaterial_rka8t")

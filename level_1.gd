@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var Tile_Map : TileMapLayer
+@export var Max_Range : float 
 var astar_grid
 var player_position
 var tile_position
@@ -58,14 +59,18 @@ func flood_fill():
 				distance[neighbour] = distance[current] + 1
 				queue.push_back(neighbour)
 	print(distance.size())
-	for tile_position in distance:
-		var distance_cur = distance[tile_position]
-		var furtherness = float(distance_cur) / 20
-		var offset_position = tile_position - offset
+	for pos in distance:
+		var world_position = Tile_Map.to_global(Tile_Map.map_to_local(pos))
+		var pixel_distance = player_position.distance_to(world_position)
+		var furtherness = clamp(pixel_distance / Max_Range, 0.0, 1.0)
+		var offset_position = pos - offset
 		distance_img.set_pixelv(offset_position, Color(furtherness,0,0))
 	%ColorRect.material.set_shader_parameter("distance_map", distance_texture)
 	%ColorRect.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	distance_texture.update(distance_img)
-func _input(event):
+	var tween = create_tween()
+	tween.tween_property(%ColorRect.material, "shader_parameter/pulse_time", 1.0, 1.2).from(0.0)\
+		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+func _input(_event):
 	if Input.is_action_just_pressed("echo"):
 		flood_fill()
