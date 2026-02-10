@@ -20,6 +20,8 @@ func _ready():
 	astar_grid.offset = offset
 	astar_grid.update()
 	bake_grid();
+	%ColorRect.global_position = Vector2(offset) * 16
+	%ColorRect.size = Vector2(rect.size)*16
 	distance_img = Image.create(rect.size.x,rect.size.y,false,Image.FORMAT_RF)
 	distance_img.fill(Color(1.0,0.0,0.0))
 	distance_texture = ImageTexture.create_from_image(distance_img)
@@ -58,9 +60,11 @@ func flood_fill():
 	print(distance.size())
 	for tile_position in distance:
 		var distance_cur = distance[tile_position]
-		var furtherness = float(distance_cur) / distance.size()
+		var furtherness = float(distance_cur) / 20
 		var offset_position = tile_position - offset
 		distance_img.set_pixelv(offset_position, Color(furtherness,0,0))
+	%ColorRect.material.set_shader_parameter("distance_map", distance_texture)
+	%ColorRect.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	distance_texture.update(distance_img)
 func _input(event):
 	if Input.is_action_just_pressed("echo"):
