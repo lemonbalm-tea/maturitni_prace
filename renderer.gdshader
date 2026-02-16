@@ -1,31 +1,55 @@
 shader_type canvas_item;
-// 'unshaded' is the key: it prevents the ColorRect from being turned black 
-// by the CanvasModulate node.
-render_mode blend_add, unshaded; 
+render_mode unshaded, blend_mix;
 
+// --- INPUTS ---
 uniform sampler2D distance_map : filter_nearest;
-uniform sampler2D screen_texture : hint_screen_texture;
-uniform float pulse_time : hint_range(0.0, 1.1) = 0.0;
+uniform sampler2D hidden_texture : filter_linear;
+uniform float pulse_time : hint_range(0.0, 1.5) = 0.0;
 uniform vec4 echo_color : source_color = vec4(0.0, 1.0, 1.0, 1.0);
 
+// --- SETTINGS ---
+// Controls the width of the bright ring
+const float WAVE_THICKNESS = 0.05; 
+// Controls how long the trail fades out
+const float TRAIL_SIZE = 0.4;
+
 void fragment() {
+    // 1. GET DATA
+    // Red channel contains the flood-fill distance (0.0 to 1.0)
     float dist = texture(distance_map, UV).r;
-    vec4 world_pixel = texture(screen_texture, SCREEN_UV);
-    
-    // Wave Math
-    float thickness = 0.03;
-    float tail_length = 0.4; 
-    float ring = step(pulse_time - thickness, dist) * step(dist, pulse_time);
-    float tail = smoothstep(pulse_time - tail_length, pulse_time, dist) * step(dist, pulse_time);
-    
-    float mask = max(ring, tail * 0.7);
-    if (dist > 0.98) mask = 0.0;
 
-    // THE FIX: 
-    // We add a 'base brightness' to the world_pixel so it isn't zero.
-    // This allows the texture of the bricks to actually show up in the echo.
-    vec3 texture_with_glow = world_pixel.rgb + (echo_color.rgb * 0.1);
-    vec3 final_rgb = texture_with_glow * echo_color.rgb * mask * 5.0;
+    // optimization: skip pixels with no distance data
+    if (dist <= 0.001) {
+        discard;
+    }
 
-    COLOR = vec4(final_rgb, 1.0);
+    // 2. GET VISUALS
+    // We use SCREEN_UV to map the hidden viewport perfectly to the screen
+    vec4 visual_color = texture(hidden_texture, SCREEN_UV);
+
+    // 3. CALCULATE WAVE
+    // The Ring: Bright leading edge
+    float ring = smoothstep(pulse_time - WAVE_THICKNESS, pulse_time, dist);
+    ring *= step(dist, pulse_time); // Hard cut at the front
+
+    // The Trail: Fading body behind the ring
+    float trail = smoothstep(pulse_time - TRAIL_SIZE, pulse_time, dist);
+    trail *= step(dist, pulse_time);
+
+    // Combine: The mask is the brightness of the wave at this pixel
+    float mask = max(ring, trail);
+
+    // 4. COLOR COMPOSITION
+    // Start with the hidden world texture
+    vec3 final_rgb = vec3(1.0, 1.0, 1.0);  // <-- ADD THIS (Force White)
+
+    // Apply the mask (darkness vs light)
+    final_rgb *= mask;
+
+    // Add the "Echo" tint (Cyan glow)
+    vec3 glow = final_rgb * echo_color.rgb * 3.0;
+    final_rgb = mix(final_rgb, glow, 0.8);
+
+    // Output with alpha transparency
+    COLOR = vec4(final_rgb, mask);
 }

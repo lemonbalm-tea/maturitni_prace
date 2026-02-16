@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var Tile_Map : TileMapLayer
-@export var Max_Range : float 
+@export var Max_Range : float = 400.0
 var astar_grid
 var player_position
 var tile_position
@@ -17,15 +17,18 @@ func _ready():
 	astar_grid = AStarGrid2D.new()
 	astar_grid.region = Rect2i (rect)
 	astar_grid.cell_size = Vector2(16,16)
-	astar_grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_AT_LEAST_ONE_WALKABLE
+	astar_grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_ALWAYS
 	astar_grid.offset = offset
 	astar_grid.update()
 	bake_grid();
 	%ColorRect.global_position = Vector2(offset) * 16
 	%ColorRect.size = Vector2(rect.size)*16
 	distance_img = Image.create(rect.size.x,rect.size.y,false,Image.FORMAT_RF)
-	distance_img.fill(Color(1.0,0.0,0.0))
+	distance_img.fill(Color(0.0,0.0,0.0))
 	distance_texture = ImageTexture.create_from_image(distance_img)
+	%ColorRect.material.set_shader_parameter("distance_map", distance_texture)
+	var hidden_texture = %SubViewport.get_texture()
+	%ColorRect.material.set_shader_parameter("hidden_texture", hidden_texture)
 	
 func bake_grid():
 	var tile_map_data = Tile_Map.get_used_cells()
@@ -37,16 +40,20 @@ func bake_grid():
 func flood_fill():
 	distance.clear()
 	queue.clear()
-	distance_img.fill(Color(1.0,0.0,0.0))
+	distance_img.fill(Color(0.0,0.0,0.0))
 	
 	player_position = %Borivoj.global_position
 	tile_position = Tile_Map.local_to_map(player_position)
 	queue.push_back(tile_position)
 	distance[tile_position] = 0
+	var max_steps = int(Max_Range / 16.0)
 	print(tile_position)
 	
 	while not queue.is_empty():
 		var current = queue.pop_front()
+		var current_distance = distance[current]
+		if current_distance >= max_steps:
+			continue
 		var directions = [Vector2i.UP, Vector2i.DOWN,Vector2i.LEFT,Vector2i.RIGHT]
 		for dir in directions:
 				var neighbour = current + dir
@@ -60,13 +67,11 @@ func flood_fill():
 				queue.push_back(neighbour)
 	print(distance.size())
 	for pos in distance:
-		var world_position = Tile_Map.to_global(Tile_Map.map_to_local(pos))
-		var pixel_distance = player_position.distance_to(world_position)
-		var furtherness = clamp(pixel_distance / Max_Range, 0.0, 1.0)
+		var steps_taken = distance[pos]
+		var furtherness = float(steps_taken) / float(max_steps)
+		furtherness = clamp(furtherness, 0.0, 1.0)
 		var offset_position = pos - offset
-		distance_img.set_pixelv(offset_position, Color(furtherness,0,0))
-	%ColorRect.material.set_shader_parameter("distance_map", distance_texture)
-	%ColorRect.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+		distance_img.set_pixelv(offset_position, Color(furtherness, 0, 0, 1.0))
 	distance_texture.update(distance_img)
 	var tween = create_tween()
 	tween.tween_property(%ColorRect.material, "shader_parameter/pulse_time", 1.0, 1.2).from(0.0)\
