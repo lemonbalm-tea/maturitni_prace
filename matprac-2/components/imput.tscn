@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cjmqvu880un8e"]
+
+[ext_resource type="Script" uid="uid://bftrykxno0gq" path="res://scripts/imput.gd" id="1_jpm02"]
+
+[node name="Imput" type="Node" unique_id=278181368]
+script = ExtResource("1_jpm02")

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://buvvmm4o5qnqa"]
+
+[ext_resource type="Script" uid="uid://bv1h4hx1oitgn" path="res://scripts/movement.gd" id="1_bkik3"]
+
+[node name="Movement" type="Node" unique_id=8606797]
+script = ExtResource("1_bkik3")
