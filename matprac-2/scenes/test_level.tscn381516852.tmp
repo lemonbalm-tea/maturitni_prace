@@ -3,8 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://5qtkde8iai81" path="res://characters/player.tscn" id="1_paw1w"]
 [ext_resource type="Texture2D" uid="uid://db4o1xsv5a50l" path="res://sprites/test_tileset.png" id="2_j6w7d"]
 [ext_resource type="PackedScene" uid="uid://d7mqf67je7ls" path="res://characters/moucha.tscn" id="3_j6w7d"]
-[ext_resource type="PackedScene" uid="uid://bxfje6qyxajmd" path="res://characters/bush.tscn" id="4_x4b8f"]
-[ext_resource type="PackedScene" uid="uid://kmm6taxn5jy2" path="res://characters/checkpoint.tscn" id="5_tmr53"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ptq8"]
 texture = ExtResource("2_j6w7d")
@@ -91,11 +89,3 @@ tile_set = SubResource("TileSet_sb12i")
 [node name="Moucha" parent="." unique_id=1295221520 instance=ExtResource("3_j6w7d")]
 position = Vector2(113, 6)
 scale = Vector2(0.205, 0.205)
-
-[node name="Bush" parent="." unique_id=1371957111 instance=ExtResource("4_x4b8f")]
-position = Vector2(-161.00002, 2.999998)
-scale = Vector2(0.42, 0.42)
-
-[node name="Checkpoint" parent="." unique_id=14700704 instance=ExtResource("5_tmr53")]
-position = Vector2(174, 23)
-script = null

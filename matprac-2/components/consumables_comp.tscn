@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bp50m6j3n7q3d"]
+
+[ext_resource type="Script" uid="uid://beasquvkxogm2" path="res://scripts/consumables_comp.gd" id="1_brcbf"]
+
+[node name="ConsumablesComp" type="Node" unique_id=1783469589]
+script = ExtResource("1_brcbf")

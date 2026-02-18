@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bxfje6qyxajmd"]
+
+[ext_resource type="Texture2D" uid="uid://b387mynr8xn43" path="res://sprites/George_W_Bush_transparent.png" id="1_51kta"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_11dmr"]
+radius = 40.0
+height = 114.0
+
+[node name="Bush" type="Area2D" unique_id=151402250 groups=["dead"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1847710870]
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("1_51kta")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=620622644]
+position = Vector2(3, 5)
+shape = SubResource("CapsuleShape2D_11dmr")

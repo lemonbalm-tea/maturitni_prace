@@ -4,9 +4,12 @@
 [ext_resource type="Script" uid="uid://bc0n2d6l23kxk" path="res://scripts/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://dlcuf7iyems6k" path="res://components/anim_comp.tscn" id="2_2hs0m"]
 [ext_resource type="PackedScene" uid="uid://c8fmny1c6dvoq" path="res://components/gravity.tscn" id="2_i3pqv"]
+[ext_resource type="FontFile" uid="uid://dkqgau6sh7sps" path="res://superstar_memesbruh03.ttf" id="3_n8jd0"]
 [ext_resource type="PackedScene" uid="uid://cjmqvu880un8e" path="res://components/imput.tscn" id="4_sweqy"]
 [ext_resource type="PackedScene" uid="uid://buvvmm4o5qnqa" path="res://components/movement.tscn" id="5_2hs0m"]
 [ext_resource type="PackedScene" uid="uid://b8sou235gqkal" path="res://components/jump_comp.tscn" id="7_1jxqw"]
+[ext_resource type="PackedScene" uid="uid://bp50m6j3n7q3d" path="res://components/consumables_comp.tscn" id="8_6t23p"]
+[ext_resource type="PackedScene" uid="uid://8t1yuy48021" path="res://components/death.tscn" id="10_q605b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sweqy"]
 atlas = ExtResource("1_4flbx")
@@ -97,13 +100,22 @@ animations = [{
 radius = 23.0
 height = 56.0
 
-[node name="player" type="CharacterBody2D" unique_id=254717690 node_paths=PackedStringArray("gravity_comp", "input_comp", "movement_comp", "anim_comp", "jump_comp")]
+[sub_resource type="LabelSettings" id="LabelSettings_q605b"]
+font = ExtResource("3_n8jd0")
+font_size = 40
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6t23p"]
+radius = 28.071337
+
+[node name="player" type="CharacterBody2D" unique_id=254717690 node_paths=PackedStringArray("gravity_comp", "input_comp", "movement_comp", "anim_comp", "jump_comp", "dead_comp", "cons_comp")]
 script = ExtResource("1_onrkg")
 gravity_comp = NodePath("Gravity")
 input_comp = NodePath("Imput")
 movement_comp = NodePath("Movement")
 anim_comp = NodePath("AnimComp")
 jump_comp = NodePath("JumpComp")
+dead_comp = NodePath("Death")
+cons_comp = NodePath("ConsumablesComp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=226672550]
 sprite_frames = SubResource("SpriteFrames_u1c27")
@@ -114,9 +126,26 @@ frame_progress = 0.7718515
 position = Vector2(-3, -1)
 shape = SubResource("CapsuleShape2D_4flbx")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1283612094]
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=732883799]
 zoom = Vector2(1.435, 1.435)
 position_smoothing_enabled = true
+
+[node name="Label" type="Label" parent="Camera2D" unique_id=1151906953]
+offset_left = -9.0
+offset_top = -206.0
+offset_right = 146.0
+offset_bottom = -160.0
+text = "0"
+label_settings = SubResource("LabelSettings_q605b")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1969972824]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2119676170]
+position = Vector2(-3, -1)
+shape = SubResource("CircleShape2D_6t23p")
+debug_color = Color(0.85907817, 0.2055817, 0.7418278, 0.41960785)
 
 [node name="AnimComp" parent="." unique_id=182775946 node_paths=PackedStringArray("sprite") instance=ExtResource("2_2hs0m")]
 sprite = NodePath("../AnimatedSprite2D")
@@ -128,4 +157,13 @@ sprite = NodePath("../AnimatedSprite2D")
 [node name="Movement" parent="." unique_id=8606797 instance=ExtResource("5_2hs0m")]
 speed = 200.0
 
-[node name="JumpComp" parent="." unique_id=1702769656 instance=ExtResource("7_1jxqw")]
+[node name="JumpComp" parent="." unique_id=1702769656 node_paths=PackedStringArray("consum_comp") instance=ExtResource("7_1jxqw")]
+consum_comp = NodePath("../ConsumablesComp")
+
+[node name="ConsumablesComp" parent="." unique_id=1783469589 node_paths=PackedStringArray("double_jump_label") instance=ExtResource("8_6t23p")]
+double_jump_label = NodePath("../Camera2D/Label")
+
+[node name="Death" parent="." unique_id=679532487 instance=ExtResource("10_q605b")]
+
+[connection signal="area_entered" from="Area2D" to="ConsumablesComp" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Area2D" to="Death" method="_on_area_2d_area_entered"]

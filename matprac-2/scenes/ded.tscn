@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://diwb6byp7xg2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yld44"]
+font_size = 128
+
+[sub_resource type="LabelSettings" id="LabelSettings_wofc8"]
+font_size = 64
+
+[node name="Ded" type="Node2D" unique_id=928131498]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1022965357]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2" unique_id=1740452589]
+offset_right = 1151.0
+offset_bottom = 645.0
+color = Color(0.55, 0.209, 0.209, 0.60784316)
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1169047423]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=2037431770]
+offset_left = 339.0
+offset_top = 214.0
+offset_right = 1086.0
+offset_bottom = 531.0
+text = "You Died"
+label_settings = SubResource("LabelSettings_yld44")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Label" unique_id=695861483]
+layout_mode = 0
+offset_left = -95.0
+offset_top = 140.0
+offset_right = 609.0
+offset_bottom = 204.0
+text = "Press space to try again"
+label_settings = SubResource("LabelSettings_wofc8")
+metadata/_edit_use_anchors_ = true

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d7mqf67je7ls"]
+
+[ext_resource type="Texture2D" uid="uid://588ov7yojisk" path="res://icon.svg" id="1_0r04j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qloqi"]
+size = Vector2(126.82925, 128.45526)
+
+[node name="Moucha" type="Area2D" unique_id=706170164 groups=["moucha"]]
+scale = Vector2(0.615, 0.615)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=271988747]
+scale = Vector2(1.0000002, 1.0000002)
+texture = ExtResource("1_0r04j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1286101949]
+position = Vector2(6.2027616e-06, 0.81300217)
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_qloqi")

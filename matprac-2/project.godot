@@ -14,6 +14,10 @@ config/name="matprac_2"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://cmpkjp164alro"
+
 [file_customization]
 
 folder_colors={
@@ -23,6 +27,16 @@ folder_colors={
 "res://scripts/": "blue",
 "res://sprites/": "purple"
 }
+
+[global_group]
+
+moucha=""
+dead=""
+checkpoint=""
+
+[gui]
+
+theme/custom_font="uid://dkqgau6sh7sps"
 
 [input]
 
