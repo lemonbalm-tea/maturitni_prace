@@ -33,6 +33,7 @@ folder_colors={
 moucha=""
 dead=""
 checkpoint=""
+jumpito=""
 
 [gui]
 

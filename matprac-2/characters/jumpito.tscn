@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c87e75ww7yovi"]
+
+[ext_resource type="Texture2D" uid="uid://bkm6u4ie8kqt8" path="res://sprites/a-vibrant-green-crystal-gemstone-shows-its-facets-png.png" id="1_ajq2y"]
+[ext_resource type="Script" uid="uid://bftq6jkvxo0wq" path="res://scripts/jumpito.gd" id="1_caq4r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ud70a"]
+radius = 82.0
+
+[node name="Jumpito" type="Area2D" unique_id=410403609 groups=["jumpito"]]
+scale = Vector2(0.36000192, 0.36000192)
+script = ExtResource("1_caq4r")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=636926542]
+position = Vector2(1, 0)
+scale = Vector2(0.50285715, 0.50285715)
+texture = ExtResource("1_ajq2y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1839421610]
+shape = SubResource("CircleShape2D_ud70a")
+debug_color = Color(0.27047727, 0.6325211, 0.057672255, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

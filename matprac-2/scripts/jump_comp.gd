@@ -1,5 +1,7 @@
 extends Node
 
+
+
 @export var jump_speed = -350.0
 @export var consum_comp : Node
 
@@ -12,3 +14,6 @@ func do_jump(body:CharacterBody2D, jump_input, is_dead):
 func do_double_jump(body: CharacterBody2D, jump_input):
 	if jump_input and not body.is_on_floor() and consum_comp.can_double_jump():
 		body.velocity.y = jump_speed
+func _physics_process(delta):
+	if Input.is_action_just_pressed("jump") and Global.jumpito == true:
+		$"..".velocity.y = jump_speed * 1.2

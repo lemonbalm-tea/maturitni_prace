@@ -165,5 +165,6 @@ double_jump_label = NodePath("../Camera2D/Label")
 
 [node name="Death" parent="." unique_id=679532487 instance=ExtResource("10_q605b")]
 
+[connection signal="area_entered" from="Area2D" to="JumpComp" method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="Area2D" to="ConsumablesComp" method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="Area2D" to="Death" method="_on_area_2d_area_entered"]

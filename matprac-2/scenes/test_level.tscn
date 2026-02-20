@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d7mqf67je7ls" path="res://characters/moucha.tscn" id="3_j6w7d"]
 [ext_resource type="PackedScene" uid="uid://bxfje6qyxajmd" path="res://characters/bush.tscn" id="4_x4b8f"]
 [ext_resource type="PackedScene" uid="uid://kmm6taxn5jy2" path="res://characters/checkpoint.tscn" id="5_tmr53"]
+[ext_resource type="PackedScene" uid="uid://c87e75ww7yovi" path="res://characters/jumpito.tscn" id="6_qcd3b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ptq8"]
 texture = ExtResource("2_j6w7d")
@@ -99,3 +100,7 @@ scale = Vector2(0.42, 0.42)
 [node name="Checkpoint" parent="." unique_id=14700704 instance=ExtResource("5_tmr53")]
 position = Vector2(174, 23)
 script = null
+
+[node name="Jumpito" parent="." unique_id=410403609 instance=ExtResource("6_qcd3b")]
+position = Vector2(-69, -30)
+scale = Vector2(0.16000131, 0.16000131)
