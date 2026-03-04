@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://bonhuuognmd20"]
+
+[ext_resource type="Script" uid="uid://blpc3g4y4tmob" path="res://scripts/rytir.gd" id="1_f1jtg"]
+[ext_resource type="Texture2D" uid="uid://c4p5oqe7aigig" path="res://sprites/zabak_asset_running.png" id="1_jdiu1"]
+[ext_resource type="PackedScene" uid="uid://c8fmny1c6dvoq" path="res://components/gravity.tscn" id="3_mj4lk"]
+[ext_resource type="PackedScene" uid="uid://dlcuf7iyems6k" path="res://components/anim_comp.tscn" id="4_8b1qe"]
+[ext_resource type="PackedScene" uid="uid://5p2bhwr7tvrg" path="res://components/attack_comp.tscn" id="5_mj4lk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2p3k0"]
+atlas = ExtResource("1_jdiu1")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tny4"]
+atlas = ExtResource("1_jdiu1")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1jtg"]
+atlas = ExtResource("1_jdiu1")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mj4lk"]
+atlas = ExtResource("1_jdiu1")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8b1qe"]
+atlas = ExtResource("1_jdiu1")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rt7i5"]
+atlas = ExtResource("1_jdiu1")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fy3o7"]
+atlas = ExtResource("1_jdiu1")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ssc5"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"charge",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2p3k0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tny4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1jtg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mj4lk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8b1qe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rt7i5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fy3o7")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cw2n3"]
+size = Vector2(39, 53)
+
+[node name="rytir" type="CharacterBody2D" unique_id=291789197 node_paths=PackedStringArray("gravity_comp", "anim_comp", "attack_comp")]
+script = ExtResource("1_f1jtg")
+gravity_comp = NodePath("Gravity")
+anim_comp = NodePath("AnimComp")
+attack_comp = NodePath("AttackComp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2008575001]
+modulate = Color(1, 0, 0, 1)
+sprite_frames = SubResource("SpriteFrames_7ssc5")
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.47436655
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2107166810]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_cw2n3")
+
+[node name="Gravity" parent="." unique_id=48871462 instance=ExtResource("3_mj4lk")]
+
+[node name="AnimComp" parent="." unique_id=182775946 instance=ExtResource("4_8b1qe")]
+
+[node name="AttackComp" parent="." unique_id=877977134 instance=ExtResource("5_mj4lk")]
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=853822025]
+target_position = Vector2(79, 0)

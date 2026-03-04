@@ -11,11 +11,11 @@ func do_flip_h(move_direction):
 func do_move_anim(move_direction, is_dead, is_jump):
 	if is_dead == false:
 		do_flip_h(move_direction)
-	elif move_direction!= 0:
-		sprite.play("idle")
-	elif is_jump == true:
-		sprite.play("jump")
-	elif is_dead == true:
-		sprite.play("dead")
-	else:
-		sprite.play("idle")
+		if move_direction!= 0:
+			sprite.play("run")
+		if is_jump == true:
+			sprite.play("jump")
+		if is_dead == true:
+			sprite.play("dead")
+		if move_direction==0:
+			sprite.play("idle")

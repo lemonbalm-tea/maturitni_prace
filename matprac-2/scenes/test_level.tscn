@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bxfje6qyxajmd" path="res://characters/bush.tscn" id="4_x4b8f"]
 [ext_resource type="PackedScene" uid="uid://kmm6taxn5jy2" path="res://characters/checkpoint.tscn" id="5_tmr53"]
 [ext_resource type="PackedScene" uid="uid://c87e75ww7yovi" path="res://characters/jumpito.tscn" id="6_qcd3b"]
+[ext_resource type="PackedScene" uid="uid://bonhuuognmd20" path="res://characters/rytir.tscn" id="7_88ety"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ptq8"]
 texture = ExtResource("2_j6w7d")
@@ -86,7 +87,7 @@ sources/0 = SubResource("TileSetAtlasSource_4ptq8")
 position = Vector2(-5, 3)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1448519333]
-tile_map_data = PackedByteArray("AAD+/wEAAAABAAAAAAD//wEAAAABAAAAAAAAAAEAAAABAAAAAAABAAEAAAABAAAAAAADAAEAAAABAAAAAAACAAEAAAABAAAAAAAEAAEAAAABAAAAAAD9/wEAAAABAAAAAAD8/wEAAAABAAAAAAD7/wEAAAABAAAAAAD6/wEAAAABAAAAAAAFAAEAAAABAAAAAAAGAAEAAAABAAAAAAA=")
+tile_map_data = PackedByteArray("AAD+/wEAAAABAAAAAAD//wEAAAABAAAAAAAAAAEAAAABAAAAAAABAAEAAAABAAAAAAADAAEAAAABAAAAAAACAAEAAAABAAAAAAAEAAEAAAABAAAAAAD9/wEAAAABAAAAAAD8/wEAAAABAAAAAAD7/wEAAAABAAAAAAD6/wEAAAABAAAAAAAFAAEAAAABAAAAAAAGAAEAAAABAAAAAAAHAAEAAAABAAAAAAAIAAEAAAABAAAAAAAJAAEAAAABAAAAAAAKAAEAAAABAAAAAAALAAEAAAABAAAAAAAMAAEAAAABAAAAAAANAAEAAAABAAAAAAAOAAEAAAABAAAAAAAPAAEAAAABAAAAAAAQAAEAAAABAAAAAAARAAEAAAABAAAAAAA=")
 tile_set = SubResource("TileSet_sb12i")
 
 [node name="Moucha" parent="." unique_id=1295221520 instance=ExtResource("3_j6w7d")]
@@ -102,5 +103,8 @@ position = Vector2(174, 23)
 script = null
 
 [node name="Jumpito" parent="." unique_id=410403609 instance=ExtResource("6_qcd3b")]
-position = Vector2(-69, -30)
+position = Vector2(-81, -251)
 scale = Vector2(0.16000131, 0.16000131)
+
+[node name="rytir" parent="." unique_id=291789197 instance=ExtResource("7_88ety")]
+position = Vector2(210, -177)
