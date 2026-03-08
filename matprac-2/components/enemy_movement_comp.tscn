@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://b7p2j3ytb406j"]
+
+[node name="EnemyMovementComp" type="Node" unique_id=2105016734]

@@ -17,5 +17,6 @@ func _physics_process(delta):
 	jump_comp.do_double_jump(self, input_comp.is_jump())
 	dead_comp.is_dead()
 	cons_comp.ded(dead_comp.is_ded_global)
+	
 	move_and_slide()
 	

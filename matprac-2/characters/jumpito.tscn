@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c87e75ww7yovi"]
+[gd_scene format=3 uid="uid://dup6eccyfodfd"]
 
 [ext_resource type="Texture2D" uid="uid://bkm6u4ie8kqt8" path="res://sprites/a-vibrant-green-crystal-gemstone-shows-its-facets-png.png" id="1_ajq2y"]
 [ext_resource type="Script" uid="uid://bftq6jkvxo0wq" path="res://scripts/jumpito.gd" id="1_caq4r"]

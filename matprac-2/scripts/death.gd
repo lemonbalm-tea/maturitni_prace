@@ -9,7 +9,6 @@ func _on_area_2d_area_entered(area):
 	if area.is_in_group("dead"):
 		is_ded = true
 		is_ded_global = true
-		print("1")
 	if area.is_in_group("checkpoint"):
 		Global.checkpoint = area.global_position
 func is_dead():

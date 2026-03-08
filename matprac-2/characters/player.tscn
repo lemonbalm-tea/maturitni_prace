@@ -162,7 +162,7 @@ height = 56.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_6t23p"]
 radius = 28.071337
 
-[node name="player" type="CharacterBody2D" unique_id=254717690 node_paths=PackedStringArray("gravity_comp", "input_comp", "movement_comp", "anim_comp", "jump_comp", "dead_comp", "cons_comp")]
+[node name="player" type="CharacterBody2D" unique_id=254717690 node_paths=PackedStringArray("gravity_comp", "input_comp", "movement_comp", "anim_comp", "jump_comp", "dead_comp", "cons_comp") groups=["player"]]
 script = ExtResource("1_onrkg")
 gravity_comp = NodePath("Gravity")
 input_comp = NodePath("Imput")
@@ -184,8 +184,8 @@ label_settings = SubResource("LabelSettings_q605b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=226672550]
 sprite_frames = SubResource("SpriteFrames_u1c27")
-animation = &"idle"
-frame_progress = 0.43035582
+animation = &"run"
+frame_progress = 0.8172438
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=576939582]
 position = Vector2(-3, -1)

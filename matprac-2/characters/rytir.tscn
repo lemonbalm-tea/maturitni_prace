@@ -3,8 +3,20 @@
 [ext_resource type="Script" uid="uid://blpc3g4y4tmob" path="res://scripts/rytir.gd" id="1_f1jtg"]
 [ext_resource type="Texture2D" uid="uid://c4p5oqe7aigig" path="res://sprites/zabak_asset_running.png" id="1_jdiu1"]
 [ext_resource type="PackedScene" uid="uid://c8fmny1c6dvoq" path="res://components/gravity.tscn" id="3_mj4lk"]
-[ext_resource type="PackedScene" uid="uid://dlcuf7iyems6k" path="res://components/anim_comp.tscn" id="4_8b1qe"]
+[ext_resource type="PackedScene" uid="uid://yq0sr6pjmpqg" path="res://components/enemy_anim_comp.tscn" id="4_fy3o7"]
+[ext_resource type="Script" uid="uid://djb42bbinkmed" path="res://scripts/enemy_anim_comp.gd" id="5_7ssc5"]
 [ext_resource type="PackedScene" uid="uid://5p2bhwr7tvrg" path="res://components/attack_comp.tscn" id="5_mj4lk"]
+[ext_resource type="Script" uid="uid://d2j81ypetunx0" path="res://scripts/attack_comp.gd" id="6_8b1qe"]
+[ext_resource type="PackedScene" uid="uid://b7p2j3ytb406j" path="res://components/enemy_movement_comp.tscn" id="7_fy3o7"]
+[ext_resource type="Script" uid="uid://ftbypihie50e" path="res://scripts/enemy_movement_comp.gd" id="8_7ssc5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ssc5"]
+atlas = ExtResource("1_jdiu1")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cw2n3"]
+atlas = ExtResource("1_jdiu1")
+region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2p3k0"]
 atlas = ExtResource("1_jdiu1")
@@ -36,10 +48,21 @@ region = Rect2(384, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7ssc5"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ssc5")
+}],
 "loop": true,
 "name": &"charge",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cw2n3")
+}],
+"loop": false,
+"name": &"notice",
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -68,31 +91,56 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fy3o7"]
+size = Vector2(32, 11)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cw2n3"]
 size = Vector2(39, 53)
 
-[node name="rytir" type="CharacterBody2D" unique_id=291789197 node_paths=PackedStringArray("gravity_comp", "anim_comp", "attack_comp")]
+[node name="rytir" type="CharacterBody2D" unique_id=291789197 node_paths=PackedStringArray("gravity_comp", "anim_comp", "attack_comp", "movement_comp")]
 script = ExtResource("1_f1jtg")
 gravity_comp = NodePath("Gravity")
-anim_comp = NodePath("AnimComp")
+anim_comp = NodePath("EnemyAnimComp")
 attack_comp = NodePath("AttackComp")
+movement_comp = NodePath("EnemyMovementComp")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2008575001]
+[node name="FlipNode" type="Node2D" parent="." unique_id=131567564]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FlipNode" unique_id=2008575001]
 modulate = Color(1, 0, 0, 1)
 sprite_frames = SubResource("SpriteFrames_7ssc5")
-animation = &"walk"
-autoplay = "walk"
-frame_progress = 0.47436655
+animation = &"notice"
+
+[node name="KillShape" type="Area2D" parent="FlipNode" unique_id=151527479 groups=["dead"]]
+position = Vector2(23, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FlipNode/KillShape" unique_id=2072734941]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_fy3o7")
+debug_color = Color(0.9836703, 0, 0.3552219, 0.41960785)
+
+[node name="AttackCast" type="RayCast2D" parent="FlipNode" unique_id=853822025]
+target_position = Vector2(388, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2107166810]
 position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_cw2n3")
 
+[node name="NoticeTimer" type="Timer" parent="." unique_id=2117544243]
+one_shot = true
+
 [node name="Gravity" parent="." unique_id=48871462 instance=ExtResource("3_mj4lk")]
 
-[node name="AnimComp" parent="." unique_id=182775946 instance=ExtResource("4_8b1qe")]
+[node name="EnemyAnimComp" parent="." unique_id=2142350365 node_paths=PackedStringArray("anim") instance=ExtResource("4_fy3o7")]
+script = ExtResource("5_7ssc5")
+anim = NodePath("../FlipNode/AnimatedSprite2D")
 
-[node name="AttackComp" parent="." unique_id=877977134 instance=ExtResource("5_mj4lk")]
+[node name="AttackComp" parent="." unique_id=877977134 node_paths=PackedStringArray("a_ray") instance=ExtResource("5_mj4lk")]
+script = ExtResource("6_8b1qe")
+a_ray = NodePath("../FlipNode/AttackCast")
 
-[node name="RayCast2D" type="RayCast2D" parent="." unique_id=853822025]
-target_position = Vector2(79, 0)
+[node name="EnemyMovementComp" parent="." unique_id=2105016734 node_paths=PackedStringArray("flip_node") instance=ExtResource("7_fy3o7")]
+script = ExtResource("8_7ssc5")
+flip_node = NodePath("../FlipNode")
+
+[connection signal="animation_finished" from="FlipNode/AnimatedSprite2D" to="EnemyAnimComp" method="_on_animated_sprite_2d_animation_finished"]
