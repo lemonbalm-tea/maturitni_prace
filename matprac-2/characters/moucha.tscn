@@ -1,18 +1,84 @@
 [gd_scene format=3 uid="uid://d7mqf67je7ls"]
 
-[ext_resource type="Texture2D" uid="uid://588ov7yojisk" path="res://icon.svg" id="1_0r04j"]
+[ext_resource type="Texture2D" uid="uid://3jgyhy787o3v" path="res://sprites/mouchyyy.png" id="1_0r04j"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qloqi"]
-size = Vector2(126.82925, 128.45526)
+[sub_resource type="AtlasTexture" id="AtlasTexture_qloqi"]
+atlas = ExtResource("1_0r04j")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dqsj"]
+atlas = ExtResource("1_0r04j")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnr4j"]
+atlas = ExtResource("1_0r04j")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jybky"]
+atlas = ExtResource("1_0r04j")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7y5en"]
+atlas = ExtResource("1_0r04j")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5e2k6"]
+atlas = ExtResource("1_0r04j")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vv1v5"]
+atlas = ExtResource("1_0r04j")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fb67"]
+atlas = ExtResource("1_0r04j")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1mj3s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qloqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dqsj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnr4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jybky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7y5en")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5e2k6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vv1v5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7fb67")
+}],
+"loop": true,
+"name": &"default",
+"speed": 11.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0r04j"]
+radius = 16.260159
 
 [node name="Moucha" type="Area2D" unique_id=706170164 groups=["moucha"]]
 scale = Vector2(0.615, 0.615)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=271988747]
-scale = Vector2(1.0000002, 1.0000002)
-texture = ExtResource("1_0r04j")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=642587205]
+scale = Vector2(3.685, 3.685)
+sprite_frames = SubResource("SpriteFrames_1mj3s")
+autoplay = "default"
+frame_progress = 0.5836675
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1286101949]
-position = Vector2(6.2027616e-06, 0.81300217)
+position = Vector2(3.2520323, -1.6260161)
 scale = Vector2(1.0000002, 1.0000002)
-shape = SubResource("RectangleShape2D_qloqi")
+shape = SubResource("CircleShape2D_0r04j")
