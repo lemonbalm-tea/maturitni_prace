@@ -63,22 +63,21 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 11.0
+"speed": 15.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0r04j"]
-radius = 16.260159
+radius = 9.7551365
 
 [node name="Moucha" type="Area2D" unique_id=706170164 groups=["moucha"]]
-scale = Vector2(0.615, 0.615)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=642587205]
-scale = Vector2(3.685, 3.685)
+scale = Vector2(2.145, 2.145)
 sprite_frames = SubResource("SpriteFrames_1mj3s")
 autoplay = "default"
-frame_progress = 0.5836675
+frame_progress = 0.4513933
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1286101949]
-position = Vector2(3.2520323, -1.6260161)
+position = Vector2(1, -2)
 scale = Vector2(1.0000002, 1.0000002)
 shape = SubResource("CircleShape2D_0r04j")

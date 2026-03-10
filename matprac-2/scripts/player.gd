@@ -12,7 +12,7 @@ extends CharacterBody2D
 func _physics_process(delta):
 	gravity_comp.do_gravity(self, delta)
 	movement_comp.do_movement_h(self, input_comp.input_h, dead_comp.is_ded_global)
-	anim_comp.do_move_anim(input_comp.input_h, dead_comp.is_ded_global, jump_comp.is_jumping)
+	anim_comp.do_move_anim(input_comp.input_h, dead_comp.is_ded_global, jump_comp.is_jumping,cons_comp.is_eating)
 	jump_comp.do_jump(self, input_comp.is_jump(), dead_comp.is_ded_global)
 	jump_comp.do_double_jump(self, input_comp.is_jump())
 	dead_comp.is_dead()

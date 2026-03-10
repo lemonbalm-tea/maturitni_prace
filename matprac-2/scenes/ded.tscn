@@ -6,6 +6,11 @@ font_size = 128
 [sub_resource type="LabelSettings" id="LabelSettings_wofc8"]
 font_size = 64
 
+[sub_resource type="LabelSettings" id="LabelSettings_jjxhe"]
+font_size = 64
+outline_size = 19
+outline_color = Color(0.72791797, 0, 0.23646784, 1)
+
 [node name="Ded" type="Node2D" unique_id=928131498]
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1022965357]
@@ -28,11 +33,31 @@ label_settings = SubResource("LabelSettings_yld44")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="CanvasLayer/Label" unique_id=695861483]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.060240965
+anchor_top = -0.018927446
+anchor_right = 0.046854082
+anchor_bottom = -0.018927446
 offset_left = -95.0
 offset_top = 140.0
 offset_right = 609.0
 offset_bottom = 204.0
-text = "Press space to try again"
+text = "Press              to try again"
 label_settings = SubResource("LabelSettings_wofc8")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="CanvasLayer/Label/Label" unique_id=1025051093]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.23962517
+anchor_top = 0.0031545742
+anchor_right = 0.23962517
+anchor_bottom = 0.0031545742
+offset_left = 0.7188721
+offset_top = 0.79810727
+offset_right = 704.7189
+offset_bottom = 64.79811
+text = "\"space\""
+label_settings = SubResource("LabelSettings_jjxhe")
 metadata/_edit_use_anchors_ = true
