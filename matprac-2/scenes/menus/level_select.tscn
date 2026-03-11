@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://0mpfa8hebvwd"]
+
+[ext_resource type="Script" uid="uid://ig5fk1dw1iix" path="res://scripts/level_select.gd" id="1_xqyeo"]
+
+[node name="LevelSelect" type="Control" unique_id=655749726]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xqyeo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1149272789]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -186.0
+offset_top = -296.0
+offset_right = 2.0
+offset_bottom = -216.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2, 2)
+alignment = 1
+
+[node name="Swamp" type="Button" parent="VBoxContainer" unique_id=966414088]
+layout_mode = 2
+text = "1 - swamp"
+
+[node name="Forest" type="Button" parent="VBoxContainer" unique_id=1593063200]
+layout_mode = 2
+text = "2- forest"
+
+[node name="Castle" type="Button" parent="VBoxContainer" unique_id=1789858435]
+layout_mode = 2
+text = "3 - castle"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1655017915]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -186.0
+offset_top = -93.0
+offset_right = 2.0
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2, 2)
+alignment = 1
+
+[node name="back" type="Button" parent="VBoxContainer2" unique_id=1460083755]
+layout_mode = 2
+text = "back"
+
+[connection signal="pressed" from="VBoxContainer/Swamp" to="." method="_on_swamp_pressed"]
+[connection signal="pressed" from="VBoxContainer/Forest" to="." method="_on_forest_pressed"]
+[connection signal="pressed" from="VBoxContainer/Castle" to="." method="_on_castle_pressed"]
+[connection signal="pressed" from="VBoxContainer2/back" to="." method="_on_back_pressed"]

@@ -16,6 +16,9 @@ outline_color = Color(0.72791797, 0, 0.23646784, 1)
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1022965357]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer2" unique_id=1740452589]
+anchors_preset = -1
+anchor_right = 0.1
+anchor_bottom = 0.10555556
 offset_right = 1151.0
 offset_bottom = 645.0
 color = Color(0.55, 0.209, 0.209, 0.60784316)
@@ -24,10 +27,10 @@ metadata/_edit_use_anchors_ = true
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1169047423]
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=2037431770]
-offset_left = 339.0
-offset_top = 214.0
-offset_right = 1086.0
-offset_bottom = 531.0
+offset_left = 386.0
+offset_top = 237.0
+offset_right = 1133.0
+offset_bottom = 554.0
 text = "You Died"
 label_settings = SubResource("LabelSettings_yld44")
 metadata/_edit_use_anchors_ = true

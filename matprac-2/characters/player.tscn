@@ -6,16 +6,56 @@
 [ext_resource type="Texture2D" uid="uid://b1yqpgq3xmrhr" path="res://sprites/froggita_eating.png" id="3_6rrl0"]
 [ext_resource type="Texture2D" uid="uid://lvth1yyipjbq" path="res://sprites/zaba_asset_idle.png" id="3_8sqrr"]
 [ext_resource type="Texture2D" uid="uid://c4p5oqe7aigig" path="res://sprites/zabak_asset_running.png" id="3_eho78"]
+[ext_resource type="Texture2D" uid="uid://dllnrokdjeiea" path="res://sprites/froggita_dead.png" id="3_eus45"]
 [ext_resource type="FontFile" uid="uid://dkqgau6sh7sps" path="res://superstar_memesbruh03.ttf" id="3_n8jd0"]
 [ext_resource type="PackedScene" uid="uid://cjmqvu880un8e" path="res://components/imput.tscn" id="4_sweqy"]
 [ext_resource type="PackedScene" uid="uid://buvvmm4o5qnqa" path="res://components/movement.tscn" id="5_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://dqg7rx2q4a4ph" path="res://sprites/froggita_jump (2).png" id="6_vcag3"]
 [ext_resource type="PackedScene" uid="uid://b8sou235gqkal" path="res://components/jump_comp.tscn" id="7_1jxqw"]
 [ext_resource type="PackedScene" uid="uid://bp50m6j3n7q3d" path="res://components/consumables_comp.tscn" id="8_6t23p"]
 [ext_resource type="PackedScene" uid="uid://8t1yuy48021" path="res://components/death.tscn" id="10_q605b"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_q605b"]
 font = ExtResource("3_n8jd0")
-font_size = 40
+font_size = 46
+outline_size = 20
+outline_color = Color(0.49803922, 0.34117648, 0.8509804, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8sqrr"]
+font = ExtResource("3_n8jd0")
+font_size = 46
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kn1ke"]
+atlas = ExtResource("3_eus45")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_botue"]
+atlas = ExtResource("3_eus45")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3dan"]
+atlas = ExtResource("3_eus45")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjqan"]
+atlas = ExtResource("3_eus45")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lfu4"]
+atlas = ExtResource("3_eus45")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4x2dv"]
+atlas = ExtResource("3_eus45")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocj0v"]
+atlas = ExtResource("3_eus45")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcvrk"]
+atlas = ExtResource("3_eus45")
+region = Rect2(448, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o21vo"]
 atlas = ExtResource("3_6rrl0")
@@ -229,6 +269,35 @@ region = Rect2(384, 0, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_kn1ke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_botue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3dan")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjqan")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lfu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4x2dv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocj0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcvrk")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_o21vo")
 }, {
 "duration": 1.0,
@@ -374,6 +443,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("6_vcag3")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_8sqrr")
 }, {
 "duration": 1.0,
@@ -420,18 +497,25 @@ cons_comp = NodePath("ConsumablesComp")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1283612094]
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=1151906953]
-offset_left = 541.0
-offset_top = 15.0
-offset_right = 696.0
-offset_bottom = 61.0
+offset_left = 725.0
+offset_top = 7.0
+offset_right = 880.0
+offset_bottom = 54.0
 text = "0"
 label_settings = SubResource("LabelSettings_q605b")
 
+[node name="Label2" type="Label" parent="CanvasLayer/Label" unique_id=116245299]
+layout_mode = 0
+offset_left = -298.0
+offset_top = 1.0
+offset_right = -22.0
+offset_bottom = 48.0
+text = "double jumps:"
+label_settings = SubResource("LabelSettings_8sqrr")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=226672550]
 sprite_frames = SubResource("SpriteFrames_u1c27")
-animation = &"eat"
-frame = 16
-frame_progress = 0.555662
+animation = &"jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=576939582]
 position = Vector2(-3.6144578, -5.9604645e-08)
@@ -439,7 +523,9 @@ shape = SubResource("CapsuleShape2D_4flbx")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=732883799]
 zoom = Vector2(1.785, 1.785)
-limit_bottom = 261
+limit_top = -349
+limit_right = 4508
+limit_bottom = 176
 position_smoothing_enabled = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1969972824]
@@ -449,8 +535,9 @@ position = Vector2(-3, -1)
 shape = SubResource("CircleShape2D_6t23p")
 debug_color = Color(0.85907817, 0.2055817, 0.7418278, 0.41960785)
 
-[node name="AnimComp" parent="." unique_id=182775946 node_paths=PackedStringArray("sprite") instance=ExtResource("2_2hs0m")]
+[node name="AnimComp" parent="." unique_id=182775946 node_paths=PackedStringArray("sprite", "parent") instance=ExtResource("2_2hs0m")]
 sprite = NodePath("../AnimatedSprite2D")
+parent = NodePath("..")
 
 [node name="Imput" parent="." unique_id=278181368 instance=ExtResource("4_sweqy")]
 
@@ -467,6 +554,7 @@ double_jump_label = NodePath("../CanvasLayer/Label")
 
 [node name="Death" parent="." unique_id=679532487 instance=ExtResource("10_q605b")]
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="AnimComp" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="Area2D" to="JumpComp" method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="Area2D" to="ConsumablesComp" method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="Area2D" to="Death" method="_on_area_2d_area_entered"]
