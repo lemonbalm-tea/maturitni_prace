@@ -421,3 +421,6 @@ stream = ExtResource("12_8i1lk")
 volume_db = -6.386
 autoplay = true
 parameters/looping = true
+
+[node name="Checkpoint8" parent="." unique_id=1154556383 instance=ExtResource("10_oyk6k")]
+position = Vector2(-94, -6)
