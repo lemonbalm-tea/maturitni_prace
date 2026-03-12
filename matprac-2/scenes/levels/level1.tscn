@@ -299,7 +299,7 @@ tile_map_data = PackedByteArray("AAD3/wAAAAABAAEAAAD4/wAAAAABAAEAAAD5/wAAAAABAAE
 tile_set = SubResource("TileSet_dywbp")
 
 [node name="player" parent="." unique_id=254717690 instance=ExtResource("2_dd0lh")]
-position = Vector2(-1838, -23.000004)
+position = Vector2(-54, -24)
 
 [node name="Moucha" parent="." unique_id=706170164 instance=ExtResource("4_bfxgj")]
 position = Vector2(1073, -54)

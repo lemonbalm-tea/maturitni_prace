@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://h7rryiga5gtb"]
+
+[ext_resource type="Texture2D" uid="uid://bw6qq5vfbych4" path="res://sprites/castle/kopiii.png" id="1_16k2i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05fb5"]
+size = Vector2(49, 63)
+
+[node name="Bush" type="Area2D" unique_id=151402250 groups=["dead"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1847710870]
+texture = ExtResource("1_16k2i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1314425075]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_05fb5")

@@ -61,7 +61,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ud70a"]
-radius = 44.444206
+radius = 44.530926
 
 [node name="Jumpito" type="Area2D" unique_id=410403609 groups=["jumpito"]]
 scale = Vector2(0.36000192, 0.36000192)
@@ -79,7 +79,7 @@ debug_color = Color(0.27047727, 0.6325211, 0.057672255, 0.41960785)
 
 [node name="Timer" type="Timer" parent="." unique_id=938323591]
 process_callback = 0
-wait_time = 5.0
+wait_time = 9.0
 autostart = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

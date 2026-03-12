@@ -535,9 +535,8 @@ position = Vector2(-3, -1)
 shape = SubResource("CircleShape2D_6t23p")
 debug_color = Color(0.85907817, 0.2055817, 0.7418278, 0.41960785)
 
-[node name="AnimComp" parent="." unique_id=182775946 node_paths=PackedStringArray("sprite", "parent") instance=ExtResource("2_2hs0m")]
+[node name="AnimComp" parent="." unique_id=182775946 node_paths=PackedStringArray("sprite") instance=ExtResource("2_2hs0m")]
 sprite = NodePath("../AnimatedSprite2D")
-parent = NodePath("..")
 
 [node name="Imput" parent="." unique_id=278181368 instance=ExtResource("4_sweqy")]
 

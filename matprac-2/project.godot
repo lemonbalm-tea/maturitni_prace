@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="matprac_2"
+config/name="Froggita"
 run/main_scene="uid://btpphvlvhmsug"
 config/features=PackedStringArray("4.6", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://3w2stnq516jd"
+config/windows_native_icon="res://sprites/crown_BIGASSpng.ico"
 
 [audio]
 

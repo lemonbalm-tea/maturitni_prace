@@ -10,17 +10,13 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.name == "player":
-		player_in = true
+		Global.jumpito = true
 
 func _on_body_exited(body):
 	if body.name == "player":
-		player_in = false
+		Global.jumpito = false
 
 func _physics_process(delta):
-	if player_in == true:
-		Global.jumpito = true
-	else:
-		Global.jumpito = false
 	position.y = position.y+SPEED
 	
 
