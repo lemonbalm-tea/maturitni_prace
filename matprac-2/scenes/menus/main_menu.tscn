@@ -1,6 +1,23 @@
 [gd_scene format=3 uid="uid://btpphvlvhmsug"]
 
 [ext_resource type="Script" uid="uid://bjtyu8biqhks2" path="res://scripts/main_menu.gd" id="1_xqga4"]
+[ext_resource type="Texture2D" uid="uid://ndseaonklj6r" path="res://sprites/forest/background_forest_pozadi.png" id="2_imvie"]
+[ext_resource type="Texture2D" uid="uid://e1qy2ty16oc4" path="res://sprites/forest/background_forest_keratdi.png" id="3_ng0o5"]
+[ext_resource type="Texture2D" uid="uid://bi8aowukdhynq" path="res://sprites/forest/background_forest_predposlednii.png" id="4_8r73w"]
+[ext_resource type="Texture2D" uid="uid://bng1ub56amch7" path="res://sprites/forest/background_forest_poslednii.png" id="5_1hnlc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xqga4"]
+font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_ovrgc"]
+font_size = 28
+outline_size = 13
+outline_color = Color(0.08928352, 0.20369923, 0.43936944, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_imvie"]
+font_size = 128
+shadow_size = 50
+shadow_color = Color(0.24, 0.24, 0.24, 1)
 
 [node name="MainMenu" type="Control" unique_id=1780768958]
 layout_mode = 3
@@ -11,8 +28,70 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xqga4")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1012184932]
-layout_mode = 1
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1800306788]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer" unique_id=717413187]
+color = Color(0.7047, 0.78894, 0.81, 1)
+
+[node name="Parallax2D" type="Parallax2D" parent="CanvasLayer" unique_id=1237878417]
+scroll_scale = Vector2(0.4, 1)
+scroll_offset = Vector2(-1101, 469)
+repeat_size = Vector2(2560, 0)
+autoscroll = Vector2(20, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Parallax2D" unique_id=1060668743]
+position = Vector2(0, -110)
+texture = ExtResource("2_imvie")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/Parallax2D" unique_id=1002486791]
+position = Vector2(1280, -110)
+texture = ExtResource("2_imvie")
+
+[node name="Parallax2D2" type="Parallax2D" parent="CanvasLayer" unique_id=69349671]
+scroll_scale = Vector2(0.6, 1)
+scroll_offset = Vector2(-1101, 469)
+repeat_size = Vector2(2560, 0)
+autoscroll = Vector2(20, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Parallax2D2" unique_id=55943131]
+position = Vector2(0, -110)
+texture = ExtResource("3_ng0o5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/Parallax2D2" unique_id=49988701]
+position = Vector2(1280, -110)
+texture = ExtResource("3_ng0o5")
+
+[node name="Parallax2D3" type="Parallax2D" parent="CanvasLayer" unique_id=1541391089]
+scroll_scale = Vector2(0.7, 1)
+scroll_offset = Vector2(-1101, 469)
+repeat_size = Vector2(2560, 0)
+autoscroll = Vector2(20, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Parallax2D3" unique_id=1621333855]
+position = Vector2(0, -110)
+texture = ExtResource("4_8r73w")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/Parallax2D3" unique_id=702466161]
+position = Vector2(1280, -110)
+texture = ExtResource("4_8r73w")
+
+[node name="Parallax2D4" type="Parallax2D" parent="CanvasLayer" unique_id=1468531217]
+scroll_scale = Vector2(0.85, 1)
+scroll_offset = Vector2(-1101, 469)
+repeat_size = Vector2(2560, 0)
+autoscroll = Vector2(20, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Parallax2D4" unique_id=534602016]
+position = Vector2(0, -110)
+texture = ExtResource("5_1hnlc")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/Parallax2D4" unique_id=1582825116]
+position = Vector2(1280, -110)
+texture = ExtResource("5_1hnlc")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1490110011]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2" unique_id=1012184932]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -27,18 +106,42 @@ grow_vertical = 0
 scale = Vector2(2, 2)
 alignment = 1
 
-[node name="Select" type="Button" parent="VBoxContainer" unique_id=77082760]
+[node name="Select" type="Button" parent="CanvasLayer2/VBoxContainer" unique_id=77082760]
 layout_mode = 2
 text = "Select level"
 
-[node name="Options" type="Button" parent="VBoxContainer" unique_id=765735709]
+[node name="Options" type="Button" parent="CanvasLayer2/VBoxContainer" unique_id=765735709]
 layout_mode = 2
 text = "options"
 
-[node name="Quit" type="Button" parent="VBoxContainer" unique_id=884654906]
+[node name="Quit" type="Button" parent="CanvasLayer2/VBoxContainer" unique_id=884654906]
 layout_mode = 2
 text = "quit"
 
-[connection signal="pressed" from="VBoxContainer/Select" to="." method="_on_select_pressed"]
-[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[node name="Label" type="Label" parent="CanvasLayer2" unique_id=2102876958]
+offset_left = 1060.0
+offset_top = 674.0
+offset_right = 1205.0
+offset_bottom = 702.0
+text = "art by: "
+label_settings = SubResource("LabelSettings_xqga4")
+
+[node name="Label2" type="Label" parent="CanvasLayer2/Label" unique_id=315954370]
+layout_mode = 0
+offset_left = 87.0
+offset_right = 232.0
+offset_bottom = 28.0
+text = "AniaSte"
+label_settings = SubResource("LabelSettings_ovrgc")
+
+[node name="Label2" type="Label" parent="CanvasLayer2" unique_id=1204259098]
+offset_left = 401.0
+offset_top = 223.0
+offset_right = 897.0
+offset_bottom = 351.0
+text = "Froggita"
+label_settings = SubResource("LabelSettings_imvie")
+
+[connection signal="pressed" from="CanvasLayer2/VBoxContainer/Select" to="." method="_on_select_pressed"]
+[connection signal="pressed" from="CanvasLayer2/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="CanvasLayer2/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8xnncr87nlrm"
-path="res://.godot/imported/spikes.png-0f90dad5be8f6da8c849641b5840fcea.ctex"
+uid="uid://c3adjsafroc0q"
+path="res://.godot/imported/swamp_forest_tileset.png-abf45a0cd05e3cefa481ffa5d174940b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/spikes.png"
-dest_files=["res://.godot/imported/spikes.png-0f90dad5be8f6da8c849641b5840fcea.ctex"]
+source_file="res://sprites/swamp/swamp_forest_tileset.png"
+dest_files=["res://.godot/imported/swamp_forest_tileset.png-abf45a0cd05e3cefa481ffa5d174940b.ctex"]
 
 [params]
 

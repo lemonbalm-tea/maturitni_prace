@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c40b0f7xwmumh"
-path="res://.godot/imported/swamp_background_back.png-2b63f40ff2978f38f4f22fa4d4b6ab6a.ctex"
+uid="uid://c22f61dqfs43o"
+path="res://.godot/imported/swamp_background_lia.png-fb75f38405fef742478ee9f670787e1a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/swamp_background_back.png"
-dest_files=["res://.godot/imported/swamp_background_back.png-2b63f40ff2978f38f4f22fa4d4b6ab6a.ctex"]
+source_file="res://sprites/swamp/swamp_background_lia.png"
+dest_files=["res://.godot/imported/swamp_background_lia.png-fb75f38405fef742478ee9f670787e1a.ctex"]
 
 [params]
 

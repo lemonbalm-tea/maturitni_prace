@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1itk1opf08mq"
-path="res://.godot/imported/swamp_background_ker.png-13d7d92aca545af73e92ce4ced4dcdba.ctex"
+uid="uid://bng1ub56amch7"
+path="res://.godot/imported/background_forest_poslednii.png-c9c16859af7298d56c65b3be9ce0c9e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/swamp_background_ker.png"
-dest_files=["res://.godot/imported/swamp_background_ker.png-13d7d92aca545af73e92ce4ced4dcdba.ctex"]
+source_file="res://sprites/forest/background_forest_poslednii.png"
+dest_files=["res://.godot/imported/background_forest_poslednii.png-c9c16859af7298d56c65b3be9ce0c9e7.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c22f61dqfs43o"
-path="res://.godot/imported/swamp_background_lia.png-8738d78015de164dacb5c247b39c0141.ctex"
+uid="uid://e1qy2ty16oc4"
+path="res://.godot/imported/background_forest_keratdi.png-ced57e813d2df57678ee2237b2bb0d4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/swamp_background_lia.png"
-dest_files=["res://.godot/imported/swamp_background_lia.png-8738d78015de164dacb5c247b39c0141.ctex"]
+source_file="res://sprites/forest/background_forest_keratdi.png"
+dest_files=["res://.godot/imported/background_forest_keratdi.png-ced57e813d2df57678ee2237b2bb0d4e.ctex"]
 
 [params]
 

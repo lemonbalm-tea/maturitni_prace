@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgkl3egsv3nwy"
-path="res://.godot/imported/swamp_background_trava.png-fcbb7ce83a424befec415de18b15d6ff.ctex"
+uid="uid://c8xnncr87nlrm"
+path="res://.godot/imported/spikes.png-8e0cac84fcf6c4a945f7a948a9484afc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/swamp_background_trava.png"
-dest_files=["res://.godot/imported/swamp_background_trava.png-fcbb7ce83a424befec415de18b15d6ff.ctex"]
+source_file="res://sprites/swamp/spikes.png"
+dest_files=["res://.godot/imported/spikes.png-8e0cac84fcf6c4a945f7a948a9484afc.ctex"]
 
 [params]
 

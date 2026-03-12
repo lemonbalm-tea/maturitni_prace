@@ -1,16 +1,16 @@
-[gd_scene format=3 uid="uid://bxfje6qyxajmd"]
+[gd_scene format=3 uid="uid://c4wqquc83aw5y"]
 
-[ext_resource type="Texture2D" uid="uid://c8xnncr87nlrm" path="res://sprites/swamp/spikes.png" id="1_51kta"]
+[ext_resource type="Texture2D" uid="uid://lpfn23u6lfgc" path="res://sprites/forest/rose_bush.png" id="1_qmqe2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_51kta"]
 radius = 20.0
-height = 56.0
+height = 46.0
 
 [node name="Bush" type="Area2D" unique_id=151402250 groups=["dead"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1847710870]
-texture = ExtResource("1_51kta")
+texture = ExtResource("1_qmqe2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1314425075]
-position = Vector2(1, 4)
+position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_51kta")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k5v1it7ic2kl"
-path="res://.godot/imported/swamp_background_zadu_strom.png-53bbbb0a18bbfc6cd3db4f042f50fe31.ctex"
+uid="uid://lpfn23u6lfgc"
+path="res://.godot/imported/rose_bush.png-6db72973be54d78618ba58811645083c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/swamp_background_zadu_strom.png"
-dest_files=["res://.godot/imported/swamp_background_zadu_strom.png-53bbbb0a18bbfc6cd3db4f042f50fe31.ctex"]
+source_file="res://sprites/forest/rose_bush.png"
+dest_files=["res://.godot/imported/rose_bush.png-6db72973be54d78618ba58811645083c.ctex"]
 
 [params]
 

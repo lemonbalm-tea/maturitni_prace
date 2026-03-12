@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3adjsafroc0q"
-path="res://.godot/imported/swamp_forest_tileset.png-eb725d9d0d80e82ab926b0c2cf30a459.ctex"
+uid="uid://d1itk1opf08mq"
+path="res://.godot/imported/swamp_background_ker.png-b320defd7c6525c2e43a11d772f8fd99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/swamp_forest_tileset.png"
-dest_files=["res://.godot/imported/swamp_forest_tileset.png-eb725d9d0d80e82ab926b0c2cf30a459.ctex"]
+source_file="res://sprites/swamp/swamp_background_ker.png"
+dest_files=["res://.godot/imported/swamp_background_ker.png-b320defd7c6525c2e43a11d772f8fd99.ctex"]
 
 [params]
 

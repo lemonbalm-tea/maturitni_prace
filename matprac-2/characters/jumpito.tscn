@@ -1,19 +1,77 @@
 [gd_scene format=3 uid="uid://dup6eccyfodfd"]
 
-[ext_resource type="Texture2D" uid="uid://bkm6u4ie8kqt8" path="res://sprites/a-vibrant-green-crystal-gemstone-shows-its-facets-png.png" id="1_ajq2y"]
 [ext_resource type="Script" uid="uid://bftq6jkvxo0wq" path="res://scripts/jumpito.gd" id="1_caq4r"]
+[ext_resource type="Texture2D" uid="uid://brp1w2nqpmbg3" path="res://sprites/forest/leaf.png" id="2_caq4r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpjko"]
+atlas = ExtResource("2_caq4r")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsp01"]
+atlas = ExtResource("2_caq4r")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbxod"]
+atlas = ExtResource("2_caq4r")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gha21"]
+atlas = ExtResource("2_caq4r")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_euk5u"]
+atlas = ExtResource("2_caq4r")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmuqk"]
+atlas = ExtResource("2_caq4r")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhgpt"]
+atlas = ExtResource("2_caq4r")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uef5j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpjko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsp01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbxod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gha21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_euk5u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmuqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhgpt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ud70a"]
-radius = 82.0
+radius = 44.444206
 
 [node name="Jumpito" type="Area2D" unique_id=410403609 groups=["jumpito"]]
 scale = Vector2(0.36000192, 0.36000192)
 script = ExtResource("1_caq4r")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=636926542]
-position = Vector2(1, 0)
-scale = Vector2(0.50285715, 0.50285715)
-texture = ExtResource("1_ajq2y")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1065256613]
+scale = Vector2(2.65, 2.65)
+sprite_frames = SubResource("SpriteFrames_uef5j")
+autoplay = "default"
+frame_progress = 0.55067825
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1839421610]
 shape = SubResource("CircleShape2D_ud70a")

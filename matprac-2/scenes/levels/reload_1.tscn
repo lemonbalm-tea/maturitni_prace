@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://cksjvbr65qlb5"]
+
+[ext_resource type="PackedScene" uid="uid://d7mqf67je7ls" path="res://characters/moucha.tscn" id="1_n0d2a"]
+[ext_resource type="PackedScene" uid="uid://bxfje6qyxajmd" path="res://characters/bush.tscn" id="2_8hhiv"]
+[ext_resource type="PackedScene" uid="uid://kmm6taxn5jy2" path="res://characters/checkpoint.tscn" id="3_885ru"]
+
+[node name="Reload1" type="Node2D" unique_id=424316582]
+
+[node name="Moucha6" parent="." unique_id=706170164 instance=ExtResource("1_n0d2a")]
+position = Vector2(3590, -22)
+
+[node name="Moucha7" parent="." unique_id=52035867 instance=ExtResource("1_n0d2a")]
+position = Vector2(3685, -114)
+
+[node name="Bush10" parent="." unique_id=151402250 instance=ExtResource("2_8hhiv")]
+position = Vector2(4023, 0)
+
+[node name="Bush11" parent="." unique_id=268492536 instance=ExtResource("2_8hhiv")]
+position = Vector2(4081, 1)
+
+[node name="Bush12" parent="." unique_id=1258966403 instance=ExtResource("2_8hhiv")]
+position = Vector2(4136, 0)
+
+[node name="Bush13" parent="." unique_id=1287367466 instance=ExtResource("2_8hhiv")]
+position = Vector2(4194, 2)
+
+[node name="Moucha8" parent="." unique_id=1077522437 instance=ExtResource("1_n0d2a")]
+position = Vector2(3662, -274)
+
+[node name="Moucha9" parent="." unique_id=1549763506 instance=ExtResource("1_n0d2a")]
+position = Vector2(3630, -275)
+
+[node name="Bush14" parent="." unique_id=726535977 instance=ExtResource("2_8hhiv")]
+position = Vector2(4253, 0)
+
+[node name="Bush15" parent="." unique_id=159533058 instance=ExtResource("2_8hhiv")]
+position = Vector2(4307, 1)
+
+[node name="Moucha" parent="." unique_id=811205171 instance=ExtResource("1_n0d2a")]
+position = Vector2(1073, -54)
+
+[node name="Bush" parent="." unique_id=94369551 instance=ExtResource("2_8hhiv")]
+position = Vector2(540, -94)
+
+[node name="Checkpoint" parent="." unique_id=14700704 instance=ExtResource("3_885ru")]
+position = Vector2(788, -36)
+
+[node name="Bush2" parent="." unique_id=2131859498 instance=ExtResource("2_8hhiv")]
+position = Vector2(1089, 476.99997)
+scale = Vector2(9.285, 9.285)
+
+[node name="Checkpoint2" parent="." unique_id=1019631940 instance=ExtResource("3_885ru")]
+position = Vector2(1327, -35)
+
+[node name="Moucha2" parent="." unique_id=1563242238 instance=ExtResource("1_n0d2a")]
+position = Vector2(1394, -141)
+
+[node name="Checkpoint3" parent="." unique_id=738942420 instance=ExtResource("3_885ru")]
+position = Vector2(1680, -25)
+
+[node name="Bush3" parent="." unique_id=1595667346 instance=ExtResource("2_8hhiv")]
+position = Vector2(1797, -62)
+
+[node name="Bush4" parent="." unique_id=545218453 instance=ExtResource("2_8hhiv")]
+position = Vector2(1899, -61)
+
+[node name="Bush5" parent="." unique_id=833268473 instance=ExtResource("2_8hhiv")]
+position = Vector2(1953, -60)
+
+[node name="Moucha3" parent="." unique_id=1521356350 instance=ExtResource("1_n0d2a")]
+position = Vector2(1849, -73)
+
+[node name="Bush6" parent="." unique_id=2039146019 instance=ExtResource("2_8hhiv")]
+position = Vector2(2062, -60)
+
+[node name="Moucha4" parent="." unique_id=1523507535 instance=ExtResource("1_n0d2a")]
+position = Vector2(2011, -73)
+
+[node name="Checkpoint4" parent="." unique_id=1049026398 instance=ExtResource("3_885ru")]
+position = Vector2(2469, -33)
+
+[node name="Bush7" parent="." unique_id=1202236591 instance=ExtResource("2_8hhiv")]
+position = Vector2(2345, 487)
+scale = Vector2(9.65, 9.65)
+
+[node name="Bush9" parent="." unique_id=44619137 instance=ExtResource("2_8hhiv")]
+position = Vector2(3076.9998, 486)
+scale = Vector2(9.65, 9.65)
+
+[node name="Bush8" parent="." unique_id=1872527523 instance=ExtResource("2_8hhiv")]
+position = Vector2(2886, -64)
+
+[node name="Moucha5" parent="." unique_id=29625366 instance=ExtResource("1_n0d2a")]
+position = Vector2(2975, -62)
+
+[node name="Checkpoint5" parent="." unique_id=1727419157 instance=ExtResource("3_885ru")]
+position = Vector2(3452, 25)

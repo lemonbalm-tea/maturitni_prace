@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb1jidyc4q552"
-path="res://.godot/imported/swamp_background_stromy.png-69f4f22ce196c86e70fc91b7874ced06.ctex"
+uid="uid://ndseaonklj6r"
+path="res://.godot/imported/background_forest_pozadi.png-45289b852d2e1613282ac4e497520720.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/swamp_background_stromy.png"
-dest_files=["res://.godot/imported/swamp_background_stromy.png-69f4f22ce196c86e70fc91b7874ced06.ctex"]
+source_file="res://sprites/forest/background_forest_pozadi.png"
+dest_files=["res://.godot/imported/background_forest_pozadi.png-45289b852d2e1613282ac4e497520720.ctex"]
 
 [params]
 
